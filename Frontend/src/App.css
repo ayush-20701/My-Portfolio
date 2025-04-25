@@ -1,5 +1,5 @@
 :root {
-    --c1: #012A36;
+    --c1: #021c24;
     --c2: #29274C;
     --neutral: #7E52A0;
     --c3: #D295BF;
@@ -12,7 +12,7 @@
     --c2: #D295BF;
     --neutral: #7E52A0;
     --c3: #29274C;
-    --c4: #012A36;
+    --c4: #021c24;
     --text: #ffffff;
 }
 body{
@@ -20,4 +20,37 @@ body{
     padding: 0;
     background: var(--c4);
     transition: 0.3s all ease;
+}
+.app{
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 2.5%;
+}
+.section{
+    display: flex;
+    /* border: 1px solid rgb(255, 255, 255); */
+    margin-top: 2rem;
+    color: var(--c1);
+}
+.navbar {
+    position: sticky;
+    top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* border: 1px solid blue; */
+    /* height: 3rem; */
+    min-height: 4rem;
+	margin: 1rem auto 0 auto;
+    border-radius: 2rem;
+    /* padding: 12px; */
+    background: var(--c3);
+}
+.home{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    min-height: 80vh;
 }

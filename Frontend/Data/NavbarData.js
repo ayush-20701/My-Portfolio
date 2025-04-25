@@ -1,17 +1,7 @@
 const NavbarData = [
     {
-        key: "github",
-        text: "Github",
-        class: ""
-    },
-    {
-        key: "linkedin",
-        text: "LinkedIn",
-        class: ""
-    },
-    {
-        key: "leetcode",
-        text: "Leetcode",
+        key: "projects",
+        text: "Projects",
         class: ""
     },
     {
@@ -20,8 +10,18 @@ const NavbarData = [
         class: ""
     },
     {
-        key: "projects",
-        text: "Projects",
+        key: "leetcode",
+        text: "Leetcode",
+        class: ""
+    },
+    {
+        key: "linkedin",
+        text: "LinkedIn",
+        class: ""
+    },
+    {
+        key: "github",
+        text: "Github",
         class: ""
     },
     {

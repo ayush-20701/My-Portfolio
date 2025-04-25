@@ -1,0 +1,23 @@
+.home .sub-section{
+    display: flex;
+    flex-grow: 1;
+}
+.left{
+    flex-direction: column;
+}
+.intro{
+
+}
+.hola{
+    font-size: 8rem;
+    color: var(--neutral);
+}
+.myself{
+    font-size: 6rem;
+}
+.welcome{
+    font-size: 6rem;
+}
+.right{
+
+}
