@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    width: 95%;
+    border: 1px solid blue;
+    /* height: 3rem; */
+    min-height: 4rem;
+	margin: 2rem auto 0 auto;
+    border-radius: 2rem;
+    /* padding: 12px; */
+}
