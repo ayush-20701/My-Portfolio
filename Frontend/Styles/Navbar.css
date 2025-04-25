@@ -1,10 +1,63 @@
 .navbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 95%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     /* height: 3rem; */
     min-height: 4rem;
 	margin: 2rem auto 0 auto;
     border-radius: 2rem;
     /* padding: 12px; */
+    background: var(--c3);
+}
+.navbar button{
+    font-size: larger;
+}
+.link{
+    color: var(--c1);
+    border: none;
+    cursor: pointer;
+    background: none;
+	min-height: 3rem;
+    display: flex;
+	align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+.ends{
+    /* border: 1px solid black; */
+    
+    width: 12rem;
+	border-radius: 3rem;
+	margin-inline: 0.5rem;
+    font-weight: 700;
+}
+.homeBtn{
+    background-color: var(--neutral);
+}
+.modeBtn{
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid var(--neutral);
+}
+.tog{
+    height: 3rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.tog svg{
+    width: 2rem;
+}
+.light{
+	border-radius: 2rem 0 0 2rem;
+}
+.dark{
+	border-radius: 0 2rem 2rem 0;
+}
+.active{
+    background: var(--neutral);
 }

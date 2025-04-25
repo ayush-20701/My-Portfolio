@@ -1,0 +1,23 @@
+:root {
+    --c1: #012A36;
+    --c2: #29274C;
+    --neutral: #7E52A0;
+    --c3: #D295BF;
+    --c4: #E6BCCD;
+    --text: #000000;
+}
+
+.dark-mode {
+    --c1: #E6BCCD;
+    --c2: #D295BF;
+    --neutral: #7E52A0;
+    --c3: #29274C;
+    --c4: #012A36;
+    --text: #ffffff;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: var(--c4);
+    transition: 0.3s all ease;
+}
