@@ -22,6 +22,20 @@ body{
     background: var(--c4);
     transition: 0.3s all ease;
 }
+.layer{
+	height: 8rem;
+	position: sticky;
+    top: 0rem;
+	width: 100%;
+    z-index: 100;
+    background: linear-gradient(
+    to bottom,
+    var(--c4) 0%,
+    var(--c4) 85%,
+    transparent 100%
+  );
+
+}
 .app{
     overflow: visible;
     display: flex;
@@ -29,12 +43,14 @@ body{
     padding-inline: 2.5%;
 }
 .section{
+    z-index: 0;
     display: flex;
     /* border: 1px solid rgb(255, 255, 255); */
     margin-top: 2rem;
     color: var(--c1);
 }
 .navbar {
+    z-index: 1000;
     position: sticky;
     top: 2rem;
     display: flex;
@@ -52,6 +68,6 @@ body{
 .home{
     display: flex;
     justify-content: space-between;
-    margin-top: 3rem;
+    margin-top: 0;
     min-height: 80vh;
 }

@@ -11,7 +11,10 @@ function App() {
   
   return (
     <div className='app'>
+      <div className="layer">
+
       <Navbar/>
+      </div>
       <Home/>
       <TechStack/>
       <Projects/>
