@@ -4,20 +4,30 @@
 }
 .left{
     flex-direction: column;
+    max-width: 60%;
+    padding-right: 3rem;
 }
 .intro{
-
+    padding: 0 0 2rem 0;
 }
 .hola{
     font-size: 8rem;
+    font-weight: 700;
     color: var(--neutral);
 }
 .myself{
-    font-size: 6rem;
+    font-size: 5rem;
 }
 .welcome{
-    font-size: 6rem;
+    padding-top: 2rem;
+    font-weight: 200;
+	font-size: 3rem;
 }
 .right{
-
+    text-align:end;
+}
+.right img{
+    height: 38rem;
+    border-radius: 2rem;
+    margin: 0 0 0 auto;
 }

@@ -5,10 +5,14 @@ const Home = () => {
     <div className='home section'>
       <div className="left sub-section">
         <div className="hola intro">Hola amigo!</div>
-        <div className="myself intro">myself Ayush Kumar.</div>
-        <div className='welcome intro'>Welcome to my page.</div>
+        <div className="myself intro">Welcome to my <br />portfolio.</div>
+        <div className='welcome intro'>My projects, achievements, coding profiles...
+          all at one place!
+        </div>
       </div>
-      <div className="right sub-section">Right</div>
+      <div className="right sub-section">
+        <img src="./src/assets/1000055310.jpg" alt="" />
+      </div>
     </div>
   )
 }

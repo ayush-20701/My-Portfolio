@@ -1,21 +1,22 @@
 :root {
-    --c1: #021c24;
-    --c2: #29274C;
-    --neutral: #7E52A0;
-    --c3: #D295BF;
-    --c4: #E6BCCD;
+    --c1: #1c1c1c;
+    --c2: #4e4e4e;
+    --neutral: #da7422;
+    --c3: #d9cfc3;
+    --c4: #f9f6f2;
     --text: #000000;
 }
 
 .dark-mode {
-    --c1: #E6BCCD;
-    --c2: #D295BF;
-    --neutral: #7E52A0;
-    --c3: #29274C;
-    --c4: #021c24;
+    --c1: #f9f6f2;
+    --c2: #d9cfc3;
+    --neutral: #da7422;
+    --c3: #4e4e4e;
+    --c4: #1c1c1c;
     --text: #ffffff;
 }
 body{
+    font-family: "Raleway", sans-serif;
     margin: 0;
     padding: 0;
     background: var(--c4);
