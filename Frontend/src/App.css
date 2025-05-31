@@ -1,8 +1,9 @@
+@import "tailwindcss";
 :root {
     --c1: #1c1c1c;
     --c2: #4e4e4e;
     --neutral: #da7422;
-    --c3: #d9cfc3;
+    --c3: #e8e4df;
     --c4: #f9f6f2;
     --text: #000000;
 }
@@ -11,9 +12,12 @@
     --c1: #f9f6f2;
     --c2: #d9cfc3;
     --neutral: #da7422;
-    --c3: #4e4e4e;
+    --c3: #101010;
     --c4: #1c1c1c;
     --text: #ffffff;
+}
+html {
+  scroll-padding-top: 8rem; /* Adjust based on your navbar height */
 }
 body{
     font-family: "Raleway", sans-serif;
@@ -29,11 +33,11 @@ body{
 	width: 100%;
     z-index: 100;
     background: linear-gradient(
-    to bottom,
-    var(--c4) 0%,
-    var(--c4) 85%,
-    transparent 100%
-  );
+        to bottom,
+        var(--c4) 0%,
+        var(--c4) 85%,
+        transparent 100%
+    );
 
 }
 .app{
@@ -45,9 +49,31 @@ body{
 .section{
     z-index: 0;
     display: flex;
-    /* border: 1px solid rgb(255, 255, 255); */
+    /* border: 1px solid var(--text); */
     margin-top: 2rem;
     color: var(--c1);
+    /* height: 80vh; */
+    background-color: var(--c3);
+}
+.section2{
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+	box-sizing: border-box;
+	border-radius: 2rem;
+}
+.heading{
+    font-size: 3rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	color: var(--neutral);
+}
+.content{
+    display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 100%;
+	justify-content: space-between;
 }
 .navbar {
     z-index: 1000;
@@ -69,5 +95,8 @@ body{
     display: flex;
     justify-content: space-between;
     margin-top: 0;
-    min-height: 80vh;
+    background: none;
+}
+.footer{
+    margin-bottom: 2rem;
 }
