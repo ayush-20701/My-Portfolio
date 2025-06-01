@@ -1,59 +1,147 @@
-import React, { useEffect, useState } from 'react'
-import '../Styles/Navbar.css'
-import NavbarData from '../Data/NavbarData'
+import React, { useState } from "react";
+// import { Moon, Sun, Mail, ExternalLink, Download, Code, Database, Server, Smartphone, Award, Calendar, MapPin } from 'lucide-react';
+import { Home, Moon, Sun, Menu, X } from 'lucide-react';
 
-const Navbar = (props) => {
-    const [DarkMode, setDarkMode] = useState(false)
-    const [activeBtn, setactiveBtn] = useState("")
 
-    useEffect(() => {
-        document.body.className = DarkMode ? "dark-mode" : "";
-        const lightDiv = document.querySelector('.light');
-        const darkDiv = document.querySelector('.dark');
+const Navbar = ({ isDarkMode, toggleDarkMode, activeSection, setActiveSection }) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-        if (lightDiv) {
-            lightDiv.className = DarkMode ? "light tog" : "light tog active";
-        }
-        if (darkDiv) {
-            darkDiv.className = DarkMode ? "dark tog active" : "dark tog";
-        }
-    }, [DarkMode]);
+  const sections = [
+    { id: 'home', label: 'Home', icon: Home },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'achievements', label: 'Achievements' },
+    { id: 'contact', label: 'Contact Me' }
+  ];
 
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
 
-    return (
-        <div className='navbar'>
-            <button className="link ends activeBtn" onClick={scrollToTop}>
-                Home
-            </button>
-            {NavbarData.map((ele) => (
-                <button
-                    className={`link navBtn ${ele.class}`}
-                    key={ele.key}
-                    onClick={(e) => {
-                        props[`on${ele.key}Click`]()
-                        console.log()
-                    }}
-                >
-                    {ele.text}
-                </button>
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleSectionClick = (sectionId) => {
+    setActiveSection(sectionId);
+    setIsMobileMenuOpen(false);
+  };
+
+  const themeClasses = isDarkMode 
+    ? 'bg-[#1c1c1c] border-[#4e4e4e]' 
+    : 'bg-[#f9f6f2] border-[#e8e4df]';
+
+  const textClasses = isDarkMode 
+    ? 'text-[#f9f6f2]' 
+    : 'text-[#000000]';
+
+  const buttonClasses = isDarkMode
+    ? 'hover:bg-[#4e4e4e] active:bg-[#4e4e4e]'
+    : 'hover:bg-[#bcbcbc] active:bg-[#e8e4df]';
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 ${themeClasses} border-b backdrop-blur-md transition-all duration-300`}>
+      <div className="px-6 py-4">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex items-center justify-between">
+            
+          {/* Home Button - Left */}
+          <button
+            onClick={() => handleSectionClick('home')}
+            className={`flex items-center gap-2 px-4 py-2 text-xl rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} ${
+              activeSection === 'home' 
+                ? 'bg-[#da7422] text-white shadow-lg transform scale-105' 
+                : ''
+            }`}
+          >
+            <Home size={20} />
+            <span className="font-medium">Home</span>
+          </button>
+
+          {/* Section Buttons - Center */}
+          <div className="flex items-center gap-32 justify-between text-xl">
+            {sections.slice(1).map((section) => (
+              <button
+                key={section.id}
+                onClick={() => handleSectionClick(section.id)}
+                className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${textClasses} ${buttonClasses} ${
+                  activeSection === section.id 
+                    ? 'bg-[#da7422] text-white shadow-lg transform scale-105' 
+                    : ''
+                }`}
+              >
+                {section.label}
+              </button>
             ))}
-            <button className="link modeBtn ends" onClick={() => setDarkMode(!DarkMode)}>
-                <div className="light tog">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
-                    </svg>
-                </div>
-                <div className="dark tog">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-                    </svg>  
-                </div>
-            </button>
+          </div>
+
+          {/* Dark Mode Toggle - Right */}
+          <button
+            onClick={toggleDarkMode}
+            className={`p-3 rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} hover:scale-110`}
+          >
+            {isDarkMode ? <Sun size={30} /> : <Moon size={30} />}
+          </button>
         </div>
-    );
+
+        {/* Mobile Layout */}
+        <div className="md:hidden flex items-center justify-between">
+          {/* Home Button */}
+          <button
+            onClick={() => handleSectionClick('home')}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} ${
+              activeSection === 'home' 
+                ? 'bg-[#da7422] text-white' 
+                : ''
+            }`}
+          >
+            <Home size={18} />
+            <span className="font-medium text-sm">Home</span>
+          </button>
+
+          {/* Right side buttons */}
+          <div className="flex items-center gap-2">
+            {/* Dark Mode Toggle */}
+            <button
+              onClick={toggleDarkMode}
+              className={`p-2 rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses}`}
+            >
+              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={toggleMobileMenu}
+              className={`p-2 rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses}`}
+            >
+              {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className={`md:hidden mt-4 py-4 border-t ${isDarkMode ? 'border-[#4e4e4e]' : 'border-[#e8e4df]'}`}>
+            <div className="flex flex-col gap-2">
+              {sections.slice(1).map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => handleSectionClick(section.id)}
+                  className={`px-4 py-3 rounded-lg font-medium text-left transition-all duration-200 ${textClasses} ${buttonClasses} ${
+                    activeSection === section.id 
+                      ? 'bg-[#da7422] text-white' 
+                      : ''
+                  }`}
+                >
+                  {section.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      
+    </nav>
+  );
 };
 
 export default Navbar;

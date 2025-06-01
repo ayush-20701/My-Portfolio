@@ -1,32 +1,153 @@
 import React from 'react'
-import '../Styles/Home.css'
-const Home = () => {
+import { Moon, Sun, Linkedin, Github, Mail, ExternalLink, Download, Code, Database, Server, Smartphone, Award, Calendar, MapPin } from 'lucide-react';
+
+
+const Home = ({ darkMode }) => {
   return (
-    <div className='home section'>
-      <div className="left sub-section">
-        <div className="hola intro">Hola amigo!</div>
-        <div className="myself intro">
-          <div className="tagline">Hi! I am Ayush - A MERN Stack Developer, Deep Learning enthusiast, pursuing B.Tech (CSE)'26</div>
-          <div className="gmail"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=ayushkr20701@gmail.com" target="_blank" style={{ color: '#da7422' }}>ayushkr20701@gmail.com</a></div>
-          <div className="resume">
-            <button className="resumebtn" 
-                onClick={() => {window.open('https://drive.google.com/file/d/1Bq7kgy37546E6z4vpgDHt4_3Nuz-isBR/view?usp=drive_link', '_blank')}}>Resume 
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-down" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708z"/>
-                <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z"/>
-              </svg>
-            </button>
+    <section 
+      id="hero" 
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20"
+      style={{
+        backgroundColor: darkMode ? '#1c1c1c' : '#f9f6f2'
+      }}
+    >
+      <div className="max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Photo Section - First on mobile, second on desktop */}
+          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="relative group">
+              
+              {/* Main Photo Container */}
+              <div 
+                className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-300"
+                style={{ 
+                  border: `8px solid ${darkMode ? '#4e4e4e' : '#e8e4df'}`
+                }}
+              >
+                <img 
+                  src="./src/assets/1000055310.jpg" 
+                  alt="Ayush - MERN Stack Developer"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              
+              {/* Floating Icon */}
+              <div 
+                className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110"
+                style={{ 
+                  backgroundColor: '#da7422'
+                }}
+              >
+                <Code className="h-6 w-6 sm:h-8 sm:w-8" style={{ color: '#f9f6f2' }} />
+              </div>
+              
+              {/* Background Decoration */}
+              <div 
+                className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 w-16 h-16 sm:w-24 sm:h-24 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                style={{ backgroundColor: '#da7422' }}
+              ></div>
+              <div 
+                className="absolute -bottom-4 -left-4 sm:-bottom-8 sm:-left-8 w-12 h-12 sm:w-16 sm:h-16 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                style={{ backgroundColor: darkMode ? '#4e4e4e' : '#e8e4df' }}
+              ></div>
+              
+            </div>
           </div>
-        </div>
-        <div className='welcome intro'>
-          300+ Leetcode Problems solved <br />
-          1551 - Leetcode Max Rating
+          
+          {/* Content Section - Second on mobile, first on desktop */}
+          <div className="text-center lg:text-left space-y-6 order-2 lg:order-1">
+            
+            {/* Greeting */}
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold"
+                style={{ color: darkMode ? '#f9f6f2' : '#000000' }}>
+              <span 
+                className="text-transparent bg-clip-text"
+                style={{
+                  backgroundImage: 'linear-gradient(135deg, #da7422, #da7422)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
+                }}
+              >
+                Hola Amigo!
+              </span>
+            </h1>
+            
+            {/* Introduction */}
+            <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-relaxed"
+                 style={{ color: darkMode ? '#e8e4df' : '#4e4e4e' }}>
+              <p>
+                Hi! I am <span className="font-semibold" style={{ color: '#da7422' }}>Ayush</span> - A MERN Stack Developer,
+              </p>
+              <p>Deep Learning enthusiast,</p>
+              <p>pursuing B.Tech (CSE) '26</p>
+            </div>
+            
+            {/* Email */}
+            <div className="flex items-center justify-center lg:justify-start text-base sm:text-lg"
+                 style={{ color: darkMode ? '#e8e4df' : '#4e4e4e' }}>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ayushkr20701@gmail.com" target="_blank" className='flex items-center'>
+                    <Mail className="h-5 w-5 mr-3" style={{ color: '#da7422' }} />
+                    <span className="break-all sm:break-normal">ayushkr20701@gmail.com</span>
+                </a>
+            </div>
+            
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+              
+              {/* Resume Button */}
+              <button 
+                className="flex items-center cursor-pointer justify-center px-6 py-3 text-white rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto"
+                style={{ 
+                  backgroundColor: '#da7422',
+                }}
+                onClick={() => {window.open('https://drive.google.com/file/d/1Bq7kgy37546E6z4vpgDHt4_3Nuz-isBR/view?usp=drive_link', '_blank')}}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#c5661e'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#da7422'}
+              >
+                <Download className="h-5 w-5 mr-2" />
+                <span className="font-medium">Resume</span>
+              </button>
+              
+              {/* Social Buttons Container */}
+              <div className="flex gap-4 w-full sm:w-auto">
+                {/* LinkedIn Button */}
+                <button 
+                  className="flex items-center cursor-pointer justify-center px-4 sm:px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex-1 sm:flex-none"
+                  style={{ 
+                    backgroundColor: darkMode ? '#4e4e4e' : '#1c1c1c',
+                    color: darkMode ? '#f9f6f2' : '#e8e4df'
+                  }}
+                  onClick={() => {window.open('https://www.linkedin.com/in/ayush20701/', '_blank')}}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = darkMode ? '#5a5a5a' : '#2a2a2a'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = darkMode ? '#4e4e4e' : '#1c1c1c'}
+                >
+                  <Linkedin className="h-5 w-5 sm:mr-2" />
+                  <span className="font-medium hidden sm:inline">LinkedIn</span>
+                </button>
+                
+                {/* GitHub Button */}
+                <button 
+                  className="flex items-center cursor-pointer justify-center px-4 sm:px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex-1 sm:flex-none"
+                  style={{ 
+                    backgroundColor: darkMode ? '#4e4e4e' : '#1c1c1c',
+                    color: darkMode ? '#f9f6f2' : '#e8e4df'
+                  }}
+                  onClick={() => {window.open('https://github.com/ayush-20701', '_blank')}}
+                  onMouseEnter={(e) => e.target.style.backgroundColor = darkMode ? '#5a5a5a' : '#2a2a2a'}
+                  onMouseLeave={(e) => e.target.style.backgroundColor = darkMode ? '#4e4e4e' : '#1c1c1c'}
+                >
+                  <Github className="h-5 w-5 sm:mr-2" />
+                  <span className="font-medium hidden sm:inline">GitHub</span>
+                </button>
+              </div>
+              
+            </div>
+          </div>
+          
         </div>
       </div>
-      <div className="right sub-section">
-        <img src="./src/assets/1000055310.jpg" alt="" />
-      </div>
-    </div>
+    </section>
   )
 }
 

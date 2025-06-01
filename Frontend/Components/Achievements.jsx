@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { ExternalLink, Calendar, Github } from 'lucide-react';
-import { projectData } from '../data/ProjectData';
+import { Award, Calendar, ExternalLink, Trophy } from 'lucide-react';
+import { achvmtData } from '../data/AchievementData';
 
-const Projects = ({ isDarkMode }) => {
+const Achievements = ({ isDarkMode }) => {
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollTimeoutRef = useRef(null);
   const scrollContainerRef = useRef(null);
@@ -30,13 +30,17 @@ const Projects = ({ isDarkMode }) => {
     });
   };
 
-  const handleProjectClick = (githubLink) => {
-    window.open(githubLink, '_blank', 'noopener,noreferrer');
+  const handleAchievementClick = (certificateLink) => {
+    if (certificateLink) {
+      window.open(certificateLink, '_blank', 'noopener,noreferrer');
+    }
   };
 
-  const handleDeployedLinkClick = (e, deployedLink) => {
+  const handleExternalLinkClick = (e, externalLink) => {
     e.stopPropagation(); // Prevent triggering the card click
-    window.open(deployedLink, '_blank', 'noopener,noreferrer');
+    if (externalLink) {
+      window.open(externalLink, '_blank', 'noopener,noreferrer');
+    }
   };
 
   // Custom scrollbar styles
@@ -50,7 +54,7 @@ const Projects = ({ isDarkMode }) => {
 
   return (
     <section 
-      id="projects" 
+      id="achievements" 
       className="min-h-screen transition-all duration-300"
       style={{
         backgroundColor: isDarkMode ? '#1c1c1c' : '#f9f6f2'
@@ -63,13 +67,13 @@ const Projects = ({ isDarkMode }) => {
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ color: isDarkMode ? '#f9f6f2' : '#000000' }}
           >
-            My <span style={{ color: '#da7422' }}>Projects</span>
+            My <span style={{ color: '#da7422' }}>Achievements</span>
           </h2>
           <p 
             className="text-lg md:text-xl max-w-2xl mx-auto"
             style={{ color: isDarkMode ? '#e8e4df' : '#4e4e4e' }}
           >
-            A showcase of my recent work and the solutions I've built to solve real-world problems
+            Certifications, awards, and recognitions that showcase my continuous learning journey
           </p>
         </div>
 
@@ -108,10 +112,10 @@ const Projects = ({ isDarkMode }) => {
           `}</style>
           
           <div className="flex gap-6 md:gap-8" style={{ width: 'max-content' }}>
-            {projectData.map((project) => (
+            {achvmtData.map((achievement) => (
               <div
-                key={project.id}
-                onClick={() => handleProjectClick(project.githubLink)}
+                key={achievement.id}
+                onClick={() => handleAchievementClick(achievement.certificateLink)}
                 className="rounded-2xl border-2 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer group overflow-hidden flex-shrink-0"
                 style={{ 
                   width: '320px',
@@ -125,22 +129,33 @@ const Projects = ({ isDarkMode }) => {
                   e.currentTarget.style.backgroundColor = isDarkMode ? '#1c1c1c' : '#f9f6f2';
                 }}
               >
-                {/* Project Image */}
+                {/* Achievement Image */}
                 <div className="relative overflow-hidden">
                   <img 
-                    src={project.image} 
-                    alt={project.title}
+                    src={achievement.image} 
+                    alt={achievement.title}
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div 
                     className="absolute top-4 right-4 p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{ backgroundColor: '#da7422' }}
                   >
-                    <Github size={16} style={{ color: '#f9f6f2' }} />
+                    <Award size={16} style={{ color: '#f9f6f2' }} />
+                  </div>
+                  
+                  {/* Achievement Type Badge */}
+                  <div 
+                    className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold"
+                    style={{ 
+                      backgroundColor: '#da7422',
+                      color: '#f9f6f2'
+                    }}
+                  >
+                    {achievement.type}
                   </div>
                 </div>
 
-                {/* Project Content */}
+                {/* Achievement Content */}
                 <div className="p-6">
                   {/* Title */}
                   <h3 
@@ -155,15 +170,23 @@ const Projects = ({ isDarkMode }) => {
                       e.target.style.color = isDarkMode ? '#f9f6f2' : '#000000';
                     }}
                   >
-                    {project.title}
+                    {achievement.title}
                   </h3>
+
+                  {/* Issuer */}
+                  <p 
+                    className="text-sm font-medium mb-2"
+                    style={{ color: '#da7422' }}
+                  >
+                    {achievement.issuer}
+                  </p>
 
                   {/* Description */}
                   <p 
                     className="text-sm mb-4 line-clamp-3"
                     style={{ color: isDarkMode ? '#e8e4df' : '#4e4e4e' }}
                   >
-                    {project.description}
+                    {achievement.description}
                   </p>
 
                   {/* Date */}
@@ -172,27 +195,60 @@ const Projects = ({ isDarkMode }) => {
                     style={{ color: isDarkMode ? '#e8e4df' : '#4e4e4e' }}
                   >
                     <Calendar size={14} />
-                    <span>{formatDate(project.date)}</span>
+                    <span>{formatDate(achievement.date)}</span>
                   </div>
 
-                  {/* Deployed Link Button */}
-                  <button
-                    onClick={(e) => handleDeployedLinkClick(e, project.deployedLink)}
-                    className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 hover:scale-105 w-full justify-center"
-                    style={{
-                      backgroundColor: '#da7422',
-                      color: '#f9f6f2'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = '#c96820';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = '#da7422';
-                    }}
-                  >
-                    <ExternalLink size={14} />
-                    View Live Demo
-                  </button>
+                  {/* Skills/Technologies */}
+                  {achievement.skills && achievement.skills.length > 0 && (
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-2">
+                        {achievement.skills.slice(0, 3).map((skill, index) => (
+                          <span
+                            key={index}
+                            className="px-2 py-1 text-xs rounded-full font-medium"
+                            style={{
+                              backgroundColor: isDarkMode ? '#4e4e4e' : '#e8e4df',
+                              color: isDarkMode ? '#f9f6f2' : '#000000'
+                            }}
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                        {achievement.skills.length > 3 && (
+                          <span
+                            className="px-2 py-1 text-xs rounded-full font-medium"
+                            style={{
+                              backgroundColor: isDarkMode ? '#4e4e4e' : '#e8e4df',
+                              color: isDarkMode ? '#f9f6f2' : '#000000'
+                            }}
+                          >
+                            +{achievement.skills.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* View Certificate Button */}
+                  {achievement.certificateLink && (
+                    <button
+                      onClick={(e) => handleExternalLinkClick(e, achievement.certificateLink)}
+                      className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 hover:scale-105 w-full justify-center"
+                      style={{
+                        backgroundColor: '#da7422',
+                        color: '#f9f6f2'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.target.style.backgroundColor = '#c96820';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.backgroundColor = '#da7422';
+                      }}
+                    >
+                      <Trophy size={14} />
+                      View Certificate
+                    </button>
+                  )}
                 </div>
               </div>
             ))}
@@ -206,15 +262,15 @@ const Projects = ({ isDarkMode }) => {
               className="text-sm"
               style={{ color: isDarkMode ? '#e8e4df' : '#4e4e4e' }}
             >
-              Scroll to explore projects →
+              Scroll to explore achievements →
             </span>
           </div>
         </div>
 
-        {/* View All Projects Button */}
+        {/* View All Achievements Button */}
         <div className="text-center mt-16">
           <button
-            onClick={() => window.open('https://github.com/ayush-20701', '_blank', 'noopener,noreferrer')}
+            onClick={() => window.open('https://linkedin.com/in/ayush20701', '_blank', 'noopener,noreferrer')}
             className="px-8 py-3 rounded-xl text-lg font-medium transition-all duration-200 hover:scale-105 flex items-center gap-3 mx-auto"
             style={{
               backgroundColor: '#da7422',
@@ -227,8 +283,8 @@ const Projects = ({ isDarkMode }) => {
               e.target.style.backgroundColor = '#da7422';
             }}
           >
-            <Github size={20} />
-            View All Projects on GitHub
+            <Award size={20} />
+            View All Achievements
           </button>
         </div>
       </div>
@@ -236,4 +292,4 @@ const Projects = ({ isDarkMode }) => {
   );
 };
 
-export default Projects;
+export default Achievements;
