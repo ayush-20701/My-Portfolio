@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import Home from '../Components/Home'
-import Navbar from '../Components/Navbar'
+import Home from '../components/Home'
+import Navbar from '../components/Navbar'
 import './App.css'
-import Skills from '../Components/Skills';
-import Projects from '../Components/Projects';
-import Achievements from '../Components/Achievements';
-import Contact from '../Components/Contact';
+import Skills from '../components/Skills';
+import Projects from '../components/Projects';
+import Achievements from '../components/Achievements';
+import Contact from '../components/Contact';
 import { ArrowUp } from 'lucide-react';
 
 function App() {
