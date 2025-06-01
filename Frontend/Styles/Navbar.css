@@ -1,0 +1,268 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.navbar button {
+    font-size: larger;
+}
+
+.link {
+    color: var(--c1);
+    border: none;
+    cursor: pointer;
+    background: none;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.navBtn {
+    transition: 0.2s all ease;
+    padding: 0 1rem;
+    border-radius: 3rem;
+}
+
+.navBtn:hover {
+    color: var(--neutral);
+}
+
+.ends {
+    width: 12rem;
+    border-radius: 3rem;
+    margin-inline: 0.5rem;
+    font-weight: 700;
+}
+
+.activeBtn {
+    background-color: var(--neutral);
+}
+
+.modeBtn {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid var(--neutral);
+    display: flex;
+}
+
+.tog {
+    height: 3rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 3rem;
+}
+
+.tog svg {
+    width: 2rem;
+}
+
+.light {
+    border-radius: 2rem 0 0 2rem;
+}
+
+.dark {
+    border-radius: 0 2rem 2rem 0;
+}
+
+.active {
+    background: var(--neutral);
+}
+
+/* Large Desktop */
+@media (max-width: 1400px) {
+    .navbar button {
+        font-size: large;
+    }
+    
+    .ends {
+        width: 11rem;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 0 0.5rem;
+    }
+    
+    .ends {
+        width: 10rem;
+        margin-inline: 0.25rem;
+    }
+    
+    .navBtn {
+        padding: 0 0.8rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .navbar {
+        justify-content: center;
+        gap: 0.25rem;
+        padding: 0.5rem;
+    }
+    
+    .navbar button {
+        font-size: medium;
+    }
+    
+    .ends {
+        width: 9rem;
+        margin-inline: 0.25rem;
+    }
+    
+    .navBtn {
+        padding: 0 0.6rem;
+    }
+    
+    .tog {
+        height: 2.8rem;
+        min-width: 2.8rem;
+    }
+    
+    .tog svg {
+        width: 1.8rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .navbar button {
+        font-size: small;
+    }
+    
+    .link {
+        min-height: 2.5rem;
+    }
+    
+    .ends {
+        width: 7rem;
+        margin-inline: 0.125rem;
+        order: 1;
+    }
+    
+    .navBtn {
+        padding: 0 0.5rem;
+        order: 2;
+    }
+    
+    .modeBtn {
+        order: 3;
+        margin-top: 0.5rem;
+        width: 6rem;
+    }
+    
+    .tog {
+        height: 2.5rem;
+        min-width: 2.5rem;
+    }
+    
+    .tog svg {
+        width: 1.5rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem 0.125rem;
+        gap: 0.25rem;
+    }
+    
+    .navbar button {
+        font-size: x-small;
+    }
+    
+    .link {
+        min-height: 2.2rem;
+    }
+    
+    .ends {
+        width: 5.5rem;
+        font-size: x-small;
+    }
+    
+    .navBtn {
+        padding: 0 0.4rem;
+        font-size: x-small;
+    }
+    
+    .modeBtn {
+        width: 5rem;
+    }
+    
+    .tog {
+        height: 2.2rem;
+        min-width: 2.2rem;
+    }
+    
+    .tog svg {
+        width: 1.2rem;
+    }
+}
+
+/* Extra Small Mobile - Stack vertically if needed */
+@media (max-width: 360px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem 0.25rem;
+    }
+    
+    .navbar button {
+        font-size: xx-small;
+    }
+    
+    .ends, .navBtn, .modeBtn {
+        order: unset;
+        margin: 0;
+    }
+    
+    .ends {
+        width: 5rem;
+    }
+    
+    .modeBtn {
+        width: 4.5rem;
+        margin-top: 0;
+    }
+    
+    .link {
+        min-height: 2rem;
+    }
+    
+    .tog {
+        height: 2rem;
+        min-width: 2rem;
+    }
+    
+    .tog svg {
+        width: 1rem;
+    }
+    
+    /* Create navigation row */
+    .nav-row {
+        display: flex;
+        gap: 0.25rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

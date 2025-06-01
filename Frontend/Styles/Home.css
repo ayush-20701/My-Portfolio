@@ -1,0 +1,292 @@
+.home .sub-section {
+    display: flex;
+    flex-grow: 1;
+    background-color: none;
+}
+
+.left {
+    flex-direction: column;
+    max-width: 60%;
+    padding-right: 3rem;
+    justify-content: space-between;
+}
+
+.intro {
+    padding: 0 0 2rem 0;
+}
+
+.hola {
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--neutral);
+    line-height: 1;
+}
+
+.myself {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25vh;
+    min-height: 200px;
+}
+
+.tagline {
+    font-size: 2rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.gmail {
+    font-size: 1.4rem;
+    padding-bottom: 2rem;
+    word-break: break-all;
+}
+
+.gmail a {
+    color: #da7422;
+    text-decoration: none;
+}
+
+.gmail a:hover {
+    text-decoration: underline;
+}
+
+.resumebtn {
+    padding: 0.5rem 2rem;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 2rem;
+    background: var(--neutral);
+    border: none;
+    color: var(--c4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.resumebtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.resumebtn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.welcome {
+    padding-top: 2rem;
+    font-weight: 200;
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.right {
+    text-align: end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right img {
+    height: 38rem;
+    width: 38rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 0 0 auto;
+}
+
+/* Large Desktop */
+@media (max-width: 1400px) {
+    .hola {
+        font-size: 7rem;
+    }
+    
+    .right img {
+        height: 35rem;
+        width: 35rem;
+    }
+    
+    .welcome {
+        font-size: 2.5rem;
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .left {
+        padding-right: 2rem;
+    }
+    
+    .hola {
+        font-size: 6rem;
+    }
+    
+    .tagline {
+        font-size: 1.8rem;
+    }
+    
+    .right img {
+        height: 32rem;
+        width: 32rem;
+    }
+    
+    .welcome {
+        font-size: 2.2rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .home .sub-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .left {
+        max-width: 100%;
+        padding-right: 0;
+        order: 2;
+    }
+    
+    .right {
+        order: 1;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .hola {
+        font-size: 5rem;
+        text-align: center;
+    }
+    
+    .tagline {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    
+    .gmail {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    
+    .resume {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .welcome {
+        font-size: 2rem;
+        text-align: center;
+        padding-top: 1rem;
+    }
+    
+    .right img {
+        height: 25rem;
+        width: 25rem;
+    }
+    
+    .myself {
+        height: auto;
+        gap: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .intro {
+        padding: 0 0 1.5rem 0;
+    }
+    
+    .hola {
+        font-size: 4rem;
+    }
+    
+    .tagline {
+        font-size: 1.4rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .gmail {
+        font-size: 1.1rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .resumebtn {
+        padding: 0.6rem 1.5rem;
+        font-size: medium;
+    }
+    
+    .welcome {
+        font-size: 1.6rem;
+    }
+    
+    .right img {
+        height: 20rem;
+        width: 20rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .sub-section{
+        justify-content: center;
+    }
+    .home{
+        flex-direction: column;
+    }
+    .hola {
+        font-size: 3rem;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+    }
+    
+    .gmail {
+        font-size: 1rem;
+    }
+    
+    .resumebtn {
+        padding: 0.5rem 1.2rem;
+        font-size: small;
+        gap: 0.3rem;
+    }
+    
+    .resumebtn svg {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    
+    .welcome {
+        font-size: 1.4rem;
+    }
+    
+    .right img {
+        height: 16rem;
+        width: 16rem;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .hola {
+        font-size: 2.5rem;
+    }
+    
+    .tagline {
+        font-size: 1.1rem;
+    }
+    
+    .welcome {
+        font-size: 1.2rem;
+    }
+    
+    .right img {
+        height: 14rem;
+        width: 14rem;
+    }
+}
