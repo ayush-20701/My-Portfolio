@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { skillCategories } from '../data/SkillsData';
+import { skillCategories } from '../Data/SkillsData';
 
 const Skills = ({ isDarkMode }) => {
   const [isScrolling, setIsScrolling] = useState(false);

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Award, Calendar, ExternalLink, Trophy } from 'lucide-react';
-import { achvmtData } from '../data/AchievementData';
+import { achvmtData } from '../Data/AchievementData';
 
 const Achievements = ({ isDarkMode }) => {
   const [isScrolling, setIsScrolling] = useState(false);

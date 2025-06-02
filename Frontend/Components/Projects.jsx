@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { ExternalLink, Calendar, Github } from 'lucide-react';
-import { projectData } from '../data/ProjectData';
+import { projectData } from '../Data/ProjectData';
 
 const Projects = ({ isDarkMode }) => {
   const [isScrolling, setIsScrolling] = useState(false);
