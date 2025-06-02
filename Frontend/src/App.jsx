@@ -7,6 +7,7 @@ import Projects from '../Components/Projects';
 import Achievements from '../Components/Achievements';
 import Contact from '../Components/Contact';
 import { ArrowUp } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
   return (
     <div className="min-h-screen transition-colors duration-300">
       {/* Navbar with shared state */}
+      <Analytics/>
       <Navbar 
         isDarkMode={isDarkMode}
         toggleDarkMode={toggleDarkMode}
