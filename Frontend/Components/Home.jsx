@@ -1,6 +1,6 @@
 import React from 'react'
 import { Moon, Sun, Linkedin, Github, Mail, ExternalLink, Download, Code, Database, Server, Smartphone, Award, Calendar, MapPin } from 'lucide-react';
-
+import myImg from '../public/1000055310.jpg'
 
 const Home = ({ darkMode }) => {
   return (
@@ -26,7 +26,7 @@ const Home = ({ darkMode }) => {
                 }}
               >
                 <img 
-                  src="./src/assets/1000055310.jpg" 
+                  src= {myImg}
                   alt="Ayush - MERN Stack Developer"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
