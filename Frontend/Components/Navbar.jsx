@@ -57,7 +57,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode, activeSection, setActiveSection })
           </button>
 
           {/* Section Buttons - Center */}
-          <div className="flex items-center gap-32 justify-between text-xl">
+          <div className="flex items-center gap-32 justify-between text-l">
             {sections.slice(1).map((section) => (
               <button
                 key={section.id}
