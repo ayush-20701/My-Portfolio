@@ -80,7 +80,7 @@ function App() {
       <main>
         {/* Home Section */}
         <div id="home">
-          <Home isDarkMode={isDarkMode} />
+          <Home darkMode={isDarkMode} />
         </div>
         
         {/* Skills Section */}
