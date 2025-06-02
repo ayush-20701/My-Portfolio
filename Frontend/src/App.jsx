@@ -3,7 +3,7 @@ import './App.css'
 import Navbar from '../Components/Navbar'
 import Home from '../Components/Home'
 import Skills from '../Components/Skills';
-import Projects from '../components/Projects';
+import Projects from '../Components/Projects';
 import Achievements from '../Components/Achievements';
 import Contact from '../Components/Contact';
 import { ArrowUp } from 'lucide-react';
