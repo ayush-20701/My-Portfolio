@@ -402,6 +402,28 @@ const Contact = ({ isDarkMode }) => {
           </div>
         </div>
       </div>
+      {/* Footer */}
+      <footer 
+        className="border-t-2 py-6"
+        style={{
+          borderColor: isDarkMode ? '#4e4e4e' : '#e8e4df'
+        }}
+      >
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <p 
+              className="text-sm font-medium"
+              style={{ color: isDarkMode ? '#e8e4df' : '#4e4e4e' }}
+            >
+              This app is designed and developed by{' '}
+              <span style={{ color: '#da7422' }}>Ayush</span>{' '}
+              <span className="inline-block" style={{ color: isDarkMode ? '#e8e4df' : '#4e4e4e' }}>
+                © {new Date().getFullYear()}
+              </span>
+            </p>
+          </div>
+        </div>
+      </footer>
     </section>
   );
 };
