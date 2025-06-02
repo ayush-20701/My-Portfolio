@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import Home from '../components/Home'
-import Navbar from '../components/Navbar'
 import './App.css'
-import Skills from '../components/Skills';
-import Projects from '../components/Projects';
-import Achievements from '../components/Achievements';
-import Contact from '../components/Contact';
+import Navbar from '../components/Navbar'
+import Home from '../components/Home'
 import { ArrowUp } from 'lucide-react';
+import Skills from '../Components/Skills';
+import Projects from '../components/Projects';
+import Achievements from '../Components/Achievements';
+import Contact from '../Components/Contact';
+
 
 function App() {
   // Shared state for dark mode and active section
@@ -78,30 +79,31 @@ function App() {
       
       {/* Main Content - All sections are rendered */}
       <main>
-        {/* Home Section */}
-        <div id="home">
-          <Home darkMode={isDarkMode} />
-        </div>
-        
-        {/* Skills Section */}
-        <div id="skills">
-          <Skills isDarkMode={isDarkMode} />
-        </div>
-        
-        {/* Projects Section */}
-        <div id="projects">
-          <Projects isDarkMode={isDarkMode} />
-        </div>
+          {/* Home Section */}
+          <div id="home">
+            <Home darkMode={isDarkMode} />
+          </div>
 
-        {/* Achievements Section */}
-        <div id="achievements">
-          <Achievements isDarkMode={isDarkMode} />
-        </div>
+          {/* Skills section */}
+          <div id="skills">
+            <Skills isDarkMode={isDarkMode} />
+          </div>
 
-        {/* Contact Section */}
-        <div id="contact">
-          <Contact isDarkMode={isDarkMode} />
-        </div>
+          {/* Projects section */}
+          <div id="projects">
+            <Projects isDarkMode={isDarkMode} />
+          </div>
+
+          {/* Achievements section */}
+          <div id="achievements">
+            <Achievements isDarkMode={isDarkMode} />
+          </div>
+
+          {/* Contact section */}
+          <div id="contact">
+            <Contact isDarkMode={isDarkMode} />
+          </div>
+
       </main>
 
       {/* Scroll to Top Button */}
