@@ -77,7 +77,7 @@ const Home = ({ darkMode }) => {
             <div className="text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-relaxed"
                  style={{ color: darkMode ? '#e8e4df' : '#4e4e4e' }}>
               <p>
-                Hi! I am <span className="font-semibold" style={{ color: '#da7422' }}>Ayush</span> - A MERN Stack Developer,
+                I am <span className="font-semibold" style={{ color: '#da7422' }}>Ayush</span> - A MERN Stack Developer,
               </p>
               <p>Deep Learning enthusiast,</p>
               <p>pursuing B.Tech (CSE) '26</p>
