@@ -46,7 +46,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode, activeSection, setActiveSection })
           {/* Home Button - Left */}
           <button
             onClick={() => handleSectionClick('home')}
-            className={`flex items-center gap-2 px-4 py-2 text-xl rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} ${
+            className={`flex items-center gap-2 px-4 py-2 text-l rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} ${
               activeSection === 'home' 
                 ? 'bg-[#da7422] text-white shadow-lg transform scale-105' 
                 : ''
@@ -57,7 +57,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode, activeSection, setActiveSection })
           </button>
 
           {/* Section Buttons - Center */}
-          <div className="flex items-center gap-32 justify-between text-l">
+          <div className="flex items-center gap-32 justify-between text-xl">
             {sections.slice(1).map((section) => (
               <button
                 key={section.id}
@@ -138,8 +138,6 @@ const Navbar = ({ isDarkMode, toggleDarkMode, activeSection, setActiveSection })
           </div>
         )}
       </div>
-
-      
     </nav>
   );
 };

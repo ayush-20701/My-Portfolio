@@ -12,7 +12,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   // Shared state for dark mode and active section
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -71,7 +71,6 @@ function App() {
   return (
     <div className="min-h-screen transition-colors duration-300">
       {/* Navbar with shared state */}
-      <Analytics/>
       <Navbar 
         isDarkMode={isDarkMode}
         toggleDarkMode={toggleDarkMode}
