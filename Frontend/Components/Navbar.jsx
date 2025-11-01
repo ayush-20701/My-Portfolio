@@ -46,7 +46,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode, activeSection, setActiveSection })
           {/* Home Button - Left */}
           <button
             onClick={() => handleSectionClick('home')}
-            className={`flex items-center gap-2 px-4 py-2 text-l rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} ${
+            className={`flex items-center cursor-pointer gap-2 px-4 py-2 text-l rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} ${
               activeSection === 'home' 
                 ? 'bg-[#da7422] text-white shadow-lg transform scale-105' 
                 : ''
@@ -62,7 +62,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode, activeSection, setActiveSection })
               <button
                 key={section.id}
                 onClick={() => handleSectionClick(section.id)}
-                className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${textClasses} ${buttonClasses} ${
+                className={`px-6 py-2 rounded-lg cursor-pointer font-medium transition-all duration-200 ${textClasses} ${buttonClasses} ${
                   activeSection === section.id 
                     ? 'bg-[#da7422] text-white shadow-lg transform scale-105' 
                     : ''
@@ -76,7 +76,7 @@ const Navbar = ({ isDarkMode, toggleDarkMode, activeSection, setActiveSection })
           {/* Dark Mode Toggle - Right */}
           <button
             onClick={toggleDarkMode}
-            className={`p-3 rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} hover:scale-110`}
+            className={`p-3 cursor-pointer rounded-lg transition-all duration-200 ${textClasses} ${buttonClasses} hover:scale-110`}
           >
             {isDarkMode ? <Sun size={30} /> : <Moon size={30} />}
           </button>
