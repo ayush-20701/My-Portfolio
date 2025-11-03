@@ -64,6 +64,7 @@ const Skills = ({ isDarkMode }) => {
             /* Custom scrollbar for webkit browsers */
             ...(typeof window !== 'undefined' && window.CSS && window.CSS.supports('selector(::-webkit-scrollbar)') && {
               '--scrollbar-opacity': isScrolling ? '1' : '0',
+              padding: "1rem"
             })
           }}
         >
